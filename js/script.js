@@ -59,3 +59,30 @@ const works_swiper = new Swiper('#works_inner', {
 Fancybox.bind("[data-fancybox]", {
   // 옵션 (필요 시)
 });
+// About 영역의 내부 스크롤과 전체 페이지 Swiper 이동을 함께 지원합니다.
+const aboutScroller = document.querySelector('.about-scroll');
+aboutScroller.addEventListener('wheel', (event) => {
+  const atTop = aboutScroller.scrollTop <= 1;
+  const atBottom = aboutScroller.scrollTop + aboutScroller.clientHeight >= aboutScroller.scrollHeight - 1;
+  if ((event.deltaY < 0 && !atTop) || (event.deltaY > 0 && !atBottom)) {
+    event.stopPropagation();
+  }
+}, { passive: true });
+// 모바일에서는 소개 내용을 손가락으로 스크롤하고 상단 메뉴로 페이지를 이동합니다.
+aboutScroller.addEventListener('pointerdown', (event) => {
+  if (event.pointerType === 'touch') event.stopPropagation();
+});
+document.querySelectorAll('.about-nav a:not([data-about-contact])').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    const offset = target.getBoundingClientRect().top - aboutScroller.getBoundingClientRect().top + aboutScroller.scrollTop - 24;
+    aboutScroller.scrollTo({ top: offset, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+});
+document.querySelectorAll('[data-about-contact]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    wrap_swiper.slideTo(3);
+  });
+});
