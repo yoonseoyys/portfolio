@@ -382,18 +382,18 @@ header #gnb .btn.active {
 #wrap .container { display: block; }
 #wrap .section.frame-scene { display: block; height: auto; min-height: 0; }
 #wrap #about { background: var(--frame-paper); }
-#wrap #social-media { aspect-ratio: 1920 / 4440; background: linear-gradient(to bottom, var(--frame-paper) 0 28.828828%, #fff 28.828828% 100%); }
-#social-media .folder-left { top: 6.036036%; }
-#social-media .folder-bottom { top: 20.135135%; }
-#social-media .folder-right { top: 3.490991%; }
-#social-media .frame-display { top: 12.04955%; }
-#social-media .frame-social-copy { top: 16.261261%; }
-#social-media .social-cursor { top: 15.337838%; }
+#wrap #social-media { aspect-ratio: 1920 / 1280; background: var(--frame-paper); }
+#social-media .folder-left { top: 20.9375%; }
+#social-media .folder-bottom { top: 69.84375%; }
+#social-media .folder-right { top: 12.109375%; }
+#social-media .frame-display { top: 41.796875%; }
+#social-media .frame-social-copy { top: 56.40625%; }
+#social-media .social-cursor { top: 53.203125%; }
 #works { position: relative; }
 @media (max-width: 760px) {
  #wrap .section.frame-scene { min-height: 620px; }
  #wrap #about { min-height: 520px; }
- #wrap #social-media { aspect-ratio: auto; min-height: 1600px; background: linear-gradient(to bottom, var(--frame-paper) 0 620px, #fff 620px 100%); }
+ #wrap #social-media { aspect-ratio: auto; min-height: 620px; background: var(--frame-paper); }
  #social-media .folder-left { top: 130px; }
  #social-media .folder-right { top: 75px; }
  #social-media .folder-bottom { top: 475px; }
