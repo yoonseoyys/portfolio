@@ -72,21 +72,17 @@ aboutScroller.addEventListener('wheel', (event) => {
 aboutScroller.addEventListener('pointerdown', (event) => {
   if (event.pointerType === 'touch') event.stopPropagation();
 });
-// Frame 1 내부 링크는 소개 영역을 스크롤하고 작업 링크는 기존 Works로 이동합니다.
-document.querySelectorAll('.frame-one a').forEach((link) => {
+document.querySelectorAll('.about-nav a:not([data-about-contact])').forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault();
-    if (link.getAttribute('href') === '#works') { wrap_swiper.slideTo(2); return; }
     const target = document.querySelector(link.getAttribute('href'));
-    if (!target) return;
-    const top = target.getBoundingClientRect().top - aboutScroller.getBoundingClientRect().top + aboutScroller.scrollTop - 60;
-    aboutScroller.scrollTo({ top, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    const offset = target.getBoundingClientRect().top - aboutScroller.getBoundingClientRect().top + aboutScroller.scrollTop - 24;
+    aboutScroller.scrollTo({ top: offset, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   });
 });
-// 커서 SVG의 원본 크기를 유지하며 디자인의 화면 비율에 맞춰 확대합니다.
-const frameOne = document.querySelector('.frame-one');
-new ResizeObserver(() => {
-  const width = frameOne.clientWidth;
-  const scale = width <= 760 ? width * .12 * .77 / 24 : width / 1920 * 93.833 / 24;
-  frameOne.style.setProperty('--cursor-scale', scale);
-}).observe(frameOne);
+document.querySelectorAll('[data-about-contact]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    wrap_swiper.slideTo(3);
+  });
+});
