@@ -14,121 +14,34 @@
 
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Kalnia:wght@400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Italiana&family=Kalnia:wght@400&display=swap">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <header>
-    <h1 id="title">My portfolio</h1>
-    <nav id="gnb">
-      <ul class="menu">
-        <li class="btn">main</li>
-        <li class="btn">about</li>
-        <li class="btn">works</li>
-        <li class="btn">contact</li>
-      </ul>
-    </nav>
-  </header>
-
   <main id="wrap">
-    <div class="container">
-      <section id="main" class="section">
-        <div id="main_bg">
-          <video id="back" autoplay muted playsinline>
-            <source src="./images/bg2.mp4">
-          </video>
-        </div>
-        <div id="main_inner">
-          <h2 class="title">
-            <span>생각보다 유능하고,</span>
-            <span>보기보다 섬세합니다.</span>
-          </h2>
-          <div class="sub_line">
-            <p class="sub1">&oplus; Rough outside, precise inside.<br> Crafting visuals that speak for themselves.</p>
-            <p class="sub2">&oplus; Quietly persistent, surprisingly detailed.<br> Welcome to my creative archive.</p>
-          </div>
-        </div>
-        <!--main(home):사이트에 접속시, 맨 처음 보이는 화면
-          한화면으로 스스로를 표현할 수 있는 내용으로 구성
-          (사진,이미지,슬라이드,동영상,슬로건(문구),효과,...)-->
-      </section>
-      <section id="about" class="section" aria-label="디자이너 소개">
-        <div class="about-scroll" tabindex="0" aria-label="소개 내용 스크롤">
-          <div class="about-hero">
-            <div class="about-intro">
-              <p class="about-eyebrow">DESIGNER</p>
-              <h2>Yelan<br>Park</h2>
-              <p class="about-lead">좋은 경험을 만드는 디자이너, 박예란입니다.</p>
-              <p class="about-description">사용자의 일상에 자연스럽게 스며드는<br>디지털 경험을 디자인합니다.<br>브랜드와 사용자가 더 가까워질 수 있는<br>따뜻하고 섬세한 인터페이스를 고민합니다.</p>
-              <p class="about-motto">Designing meaningful<br>experiences for a better tomorrow.</p>
-            </div>
-            <img class="about-portrait" src="./images/about/hero.png" alt="햇살이 들어오는 작업 공간에서 생각하는 디자이너" width="1141" height="594">
-            <nav class="about-nav" aria-label="소개 바로가기">
-              <a href="#about-profile"><span>01</span>PROFILE</a>
-              <a href="#about-skills"><span>02</span>SKILLS</a>
-              <a href="#about-experience"><span>03</span>EXPERIENCE</a>
-              <a href="#contact" data-about-contact><span>04</span>CONTACT</a>
-            </nav>
-          </div>
-          <div class="about-grid">
-            <article id="about-profile" class="about-card">
-              <h3>PROFILE</h3>
-              <dl class="about-profile-list">
-                <div><dt>이름</dt><dd>박민서</dd></div>
-                <div><dt>생년월일</dt><dd>1997. 03. 12</dd></div>
-                <div><dt>거주지</dt><dd>전주, 대한민국</dd></div>
-                <div><dt>이메일</dt><dd><a href="mailto:yelan.park@example.com">yelan.park@example.com</a></dd></div>
-                <div><dt>연락처</dt><dd><a href="tel:01012345678">010-1234-5678</a></dd></div>
-                <div><dt>SNS</dt><dd class="about-social" aria-label="소셜 미디어">
-                  <!-- 실제 SNS 주소가 정해지면 각 아이콘을 링크로 변경하세요. -->
-                  <img src="./images/about/facebook.svg" alt="Facebook" width="20" height="20">
-                  <img src="./images/about/x.svg" alt="X" width="20" height="20">
-                  <img src="./images/about/instagram.svg" alt="Instagram" width="20" height="20">
-                  <img src="./images/about/linkedin.svg" alt="LinkedIn" width="20" height="20">
-                </dd></div>
-              </dl>
-              <a class="about-contact-button" href="#contact" data-about-contact>CONTACT ME <span aria-hidden="true">→</span></a>
-            </article>
-            <article id="about-skills" class="about-card">
-              <h3>SKILLS</h3>
-              <h4>Design Tool</h4>
-              <ul class="about-tools">
-                <li><img class="about-figma" src="./images/about/figma.png" alt="Figma" width="58" height="76"></li>
-                <li><img src="./images/about/photoshop.png" alt="" width="52" height="52"><span>Adobe<br>Photoshop</span></li>
-                <li><img src="./images/about/illustrator.png" alt="" width="52" height="52"><span>Adobe<br>Illustrator</span></li>
-                <li><img src="./images/about/after-effects.png" alt="" width="52" height="52"><span>Adobe<br>After Effects</span></li>
-              </ul>
-              <h4>Core Skills</h4>
-              <ul class="about-skill-list">
-                <li><span>UI/UX Design</span><meter min="0" max="100" value="90" aria-label="UI/UX Design 90%">90%</meter><span>90%</span></li>
-                <li><span>Visual Design</span><meter min="0" max="100" value="85" aria-label="Visual Design 85%">85%</meter><span>85%</span></li>
-                <li><span>Interaction Design</span><meter min="0" max="100" value="80" aria-label="Interaction Design 80%">80%</meter><span>80%</span></li>
-                <li><span>Branding</span><meter min="0" max="100" value="75" aria-label="Branding 75%">75%</meter><span>75%</span></li>
-                <li><span>Prototyping</span><meter min="0" max="100" value="85" aria-label="Prototyping 85%">85%</meter><span>85%</span></li>
-              </ul>
-            </article>
-            <article id="about-experience" class="about-card">
-              <h3>EXPERIENCE</h3>
-              <ol class="about-timeline">
-                <li><time>2024 – Present</time><div><h4>프리랜스 디자이너</h4><p>브랜드, 웹/앱, 그래픽 등<br>다양한 프로젝트 진행</p></div></li>
-                <li><time>2022 – 2024</time><div><h4>(주) 모드스튜디오<br>UI/UX 디자이너</h4><p>웹·모바일 서비스 디자인,<br>브랜드 비주얼 제작</p></div></li>
-                <li><time>2020 – 2022</time><div><h4>(주) 라이트컴퍼니<br>그래픽 디자이너</h4><p>온라인 콘텐츠 및 마케팅 디자인</p></div></li>
-                <li><time>2016 – 2020</time><div><h4>홍익대학교 시각디자인과</h4><p>학사 졸업</p></div></li>
-              </ol>
-            </article>
-            <article class="about-card about-more">
-              <h3>MORE ABOUT ME</h3>
-              <ul>
-                <li><span aria-hidden="true">☕</span><p>좋은 커피와 조용한 공간에서<br>아이디어를 찾는 걸 좋아해요.</p></li>
-                <li><span aria-hidden="true">▰</span><p>다양한 분야의 레퍼런스를 수집하고<br>기록하는 것을 즐깁니다.</p></li>
-                <li><span aria-hidden="true">✦</span><p>새로운 경험을 통해<br>시야를 넓히는 것을 좋아합니다.</p></li>
-              </ul>
-              <img src="./images/about/detail-card.png" alt="Small details make a big difference. 책과 꽃병에 비치는 햇살" width="370" height="195">
-            </article>
-          </div>
-        </div>
-      </section>
+    <div class="container frame-one">
+            <section id="main" class="section frame-scene frame-cover" aria-label="Portfolio">
+              <nav class="frame-nav" aria-label="포트폴리오 바로가기">
+                <a href="#works" data-frame-works>web design</a>
+                <a href="#main">portfolio</a>
+                <a href="#social-media">social media</a>
+              </nav>
+              <a class="frame-folder folder-left" href="#works"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"><span>web design</span></a><a class="frame-folder folder-bottom" href="#about"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"><span>portfolio</span></a><a class="frame-folder folder-right" href="#social-media"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"><span>social media</span></a>
+              <div class="frame-main-folder"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"></div>
+              <h2 class="frame-display">portfolio</h2>
+              <span class="frame-cursor cover-cursor" aria-hidden="true"><img src="./images/frame-one/cursor.svg" alt="" width="24" height="24"></span>
+            </section>
+            <section id="about" class="section frame-scene frame-biography" aria-labelledby="frame-about-title">
+              <h2 id="frame-about-title">About me</h2>
+              <!-- Figma의 About me 영역은 제목 외 내용이 없는 상태입니다. -->
+            </section>
+            <section id="social-media" class="section frame-scene frame-social" aria-labelledby="social-media-title">
+              <a class="frame-folder folder-left" href="#social-media-title"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"><span>social media</span></a><a class="frame-folder folder-bottom" href="#works"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"><span>posts</span></a><a class="frame-folder folder-right" href="#social-media-title"><img src="./images/frame-one/folder.png" alt="" width="496" height="372"><span>instagram</span></a>
+              <h2 id="social-media-title" class="frame-display">social media</h2>
+              <p class="frame-social-copy">some of the social media designs I created</p>
+              <span class="frame-cursor social-cursor" aria-hidden="true"><img src="./images/frame-one/cursor.svg" alt="" width="24" height="24"></span>
+            </section>
       <section id="works" class="section">
         <!--works(portfolio):작업한 프로젝트들을 진열하고, 
           소개 및 설명(기획)을 첨부하고, 모달윈도우를 통해
