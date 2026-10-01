@@ -15,7 +15,7 @@
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Kalnia:wght@400&display=swap">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.css?v=main-20261001">
 </head>
 
 <body>
@@ -33,25 +33,17 @@
 
   <main id="wrap">
     <div class="container">
-      <section id="main" class="section">
-        <div id="main_bg">
-          <video id="back" autoplay muted playsinline>
-            <source src="./images/bg2.mp4">
-          </video>
-        </div>
-        <div id="main_inner">
-          <h2 class="title">
-            <span>생각보다 유능하고,</span>
-            <span>보기보다 섬세합니다.</span>
+      <section id="main" class="section" aria-label="포트폴리오 메인">
+        <div class="main-artboard">
+          <h2 class="main-portfolio-title">
+            <svg viewBox="0 0 842 250" aria-label="PORTFOLIO" role="img"><text x="12" y="237" textLength="816" lengthAdjust="spacingAndGlyphs">PORTFOLIO</text></svg>
           </h2>
-          <div class="sub_line">
-            <p class="sub1">&oplus; Rough outside, precise inside.<br> Crafting visuals that speak for themselves.</p>
-            <p class="sub2">&oplus; Quietly persistent, surprisingly detailed.<br> Welcome to my creative archive.</p>
-          </div>
+          <svg class="main-contours" viewBox="0 0 842 596" fill="none" aria-hidden="true"><g stroke="#6b6b6b" stroke-width="1"><path d="M -8 480 C 85 359, 305 416, 483 402 S 820 389, 854 299"/><path d="M -8 493 C 85 372, 305 429, 483 415 S 820 402, 854 312"/><path d="M -8 506 C 85 385, 305 442, 483 428 S 820 415, 854 325"/><path d="M -8 519 C 85 398, 305 455, 483 441 S 820 428, 854 338"/><path d="M -8 532 C 85 411, 305 468, 483 454 S 820 441, 854 351"/><path d="M -8 545 C 85 424, 305 481, 483 467 S 820 454, 854 364"/><path d="M -8 558 C 85 437, 305 494, 483 480 S 820 467, 854 377"/></g></svg>
+          <a class="main-folder-link" href="#works" aria-label="포트폴리오 작품 보기">
+            <img src="./images/main/folder-open.png" alt="검은색 열린 포트폴리오 폴더" width="1335" height="1178">
+          </a>
+          <svg class="main-folder-cursor" viewBox="0 0 26 31" aria-hidden="true"><path d="M1 1 23 16 14 18 19 27 14 30 9 21 2 26Z" fill="white" stroke="#333" stroke-width=".8"/></svg>
         </div>
-        <!--main(home):사이트에 접속시, 맨 처음 보이는 화면
-          한화면으로 스스로를 표현할 수 있는 내용으로 구성
-          (사진,이미지,슬라이드,동영상,슬로건(문구),효과,...)-->
       </section>
       <section id="about" class="section" aria-label="디자이너 소개">
         <div class="about-scroll" tabindex="0" aria-label="소개 내용 스크롤">
@@ -284,7 +276,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
   <!--내부스크립트-->
-  <script src="./js/script.js"></script>
+  <script src="./js/script.js?v=main-20261001"></script>
 </body>
 
 </html>
