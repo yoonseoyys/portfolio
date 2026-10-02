@@ -354,3 +354,25 @@ $transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   .contact-artboard { width: 100%; }
   .contact-details { left: 46%; font-size: clamp(10px, 1.9cqw, 12px); }
 }
+
+/* Email form: keep folder artwork while giving controls enough room on small screens. */
+#wrap #contact { align-items: flex-start; overflow-y: auto; }
+#contact .contact-artboard { width: min(100%, 1080px); min-height: 660px; }
+#contact .contact-form { position: absolute; left: 51.25%; top: 29%; width: 39%; display: grid; gap: 8px; font-size: 14px; }
+.contact-recipient { margin-bottom: 12px; font-weight: 700; overflow-wrap: anywhere; }
+.contact-form label { font-weight: 600; }
+.contact-form input, .contact-form textarea { width: 100%; box-sizing: border-box; padding: 11px 12px; border: 1px solid #cbd2d5; border-radius: 5px; background: #fff; color: #111; font: inherit; }
+.contact-form textarea { resize: vertical; min-height: 110px; max-height: 240px; }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #4c616b; outline-offset: 2px; }
+.contact-form button { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding: 12px 16px; border: 0; border-radius: 5px; background: #4c616b; color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.contact-form button:hover { background: #354952; }
+.contact-form button:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.contact-form-note { font-size: 12px; color: #657078; line-height: 1.6; }
+@media (max-width: 600px) {
+  #contact .contact-artboard { min-height: 730px; }
+  #contact .contact-heading-folder { top: 20px; }
+  #contact .contact-title { top: 35px; height: 6cqw; min-height: 26px; }
+  #contact .contact-title-cursor { top: 52px; }
+  #contact .contact-folder { top: 90px; left: 38%; width: 24%; }
+  #contact .contact-form { top: 210px; left: 8%; width: 84%; }
+}

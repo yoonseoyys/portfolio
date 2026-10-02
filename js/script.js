@@ -83,3 +83,29 @@ document.querySelector('.main-folder-link').addEventListener('click', (event) =>
  event.preventDefault();
  wrap_swiper.slideTo(2);
 });
+
+// Native validation runs before submit; the visitor sends the message in their mail app.
+const contactForm = document.querySelector('#contact-form');
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const data = new FormData(contactForm);
+  const name = data.get('name').trim();
+  const email = data.get('email').trim();
+  const message = data.get('message').trim();
+  if (!name || !message) {
+    document.querySelector('#contact-form-note').textContent = '이름과 메시지에 내용을 입력해주세요.';
+    return;
+  }
+  const subject = `[포트폴리오 문의] ${name.replace(/[\r\n]/g, ' ')}`;
+  const body = `이름: ${name}\n회신 이메일: ${email}\n\n${message}`;
+  window.location.href = `mailto:yoonseo0915@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.querySelector('#contact-form-note').textContent = '메일 작성창에서 전송을 완료해주세요. 열리지 않으면 위 이메일 주소로 직접 보내주세요.';
+});
+// Allow editing and scrolling within Contact without triggering the page slider.
+contactForm.addEventListener('pointerdown', (event) => event.stopPropagation());
+document.querySelector('#contact').addEventListener('wheel', (event) => {
+  const section = event.currentTarget;
+  const atTop = section.scrollTop <= 1;
+  const atBottom = section.scrollTop + section.clientHeight >= section.scrollHeight - 1;
+  if (event.target.closest('.contact-form') || (event.deltaY < 0 && !atTop) || (event.deltaY > 0 && !atBottom)) event.stopPropagation();
+}, { passive: true });

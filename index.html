@@ -15,7 +15,7 @@
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Kalnia:wght@400&display=swap">
-  <link rel="stylesheet" href="./css/style.css?v=contact-20261002">
+  <link rel="stylesheet" href="./css/style.css?v=contact-form-20261002">
 </head>
 
 <body>
@@ -265,9 +265,17 @@
           <h2 id="contact-title" class="contact-title">Contact<span class="contact-selection-handle contact-selection-handle-top" aria-hidden="true"></span><span class="contact-selection-handle contact-selection-handle-bottom" aria-hidden="true"></span></h2>
           <svg class="contact-title-cursor" viewBox="0 0 26 31" aria-hidden="true"><path d="M1 1 23 16 14 18 19 27 14 30 9 21 2 26Z" fill="white" stroke="#222" stroke-width="1.2"/></svg>
           <div class="contact-folder"><img src="./images/contact/folder-closed.png" alt="" width="1410" height="1115"><svg class="contact-folder-cursor" viewBox="0 0 26 31" aria-hidden="true"><path d="M1 1 23 16 14 18 19 27 14 30 9 21 2 26Z" fill="white" stroke="#222" stroke-width="1.2"/></svg></div>
-          <ul class="contact-details" aria-label="연락처">
-            <li><a href="mailto:yoonseo0915@naver.com">Email. yoonseo0915@naver.com</a></li>
-          </ul>
+          <form class="contact-form" id="contact-form">
+            <p class="contact-recipient">Email. <a href="mailto:yoonseo0915@naver.com">yoonseo0915@naver.com</a></p>
+            <label for="contact-name">이름</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="이름을 입력해주세요">
+            <label for="contact-email">이메일</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="160" required placeholder="회신받을 이메일 주소">
+            <label for="contact-message">메시지</label>
+            <textarea id="contact-message" name="message" rows="4" maxlength="1500" required placeholder="문의 내용을 입력해주세요"></textarea>
+            <button type="submit">메일 보내기 <span aria-hidden="true">↗</span></button>
+            <p class="contact-form-note" id="contact-form-note" role="status">버튼을 누르면 메일 앱이 열립니다. 작성창에서 전송을 완료해주세요.</p>
+          </form>
         </div>
       </section>
     </div><!--end:.container-->
@@ -282,7 +290,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
   <!--내부스크립트-->
-  <script src="./js/script.js?v=contact-20261002"></script>
+  <script src="./js/script.js?v=contact-form-20261002"></script>
 </body>
 
 </html>
