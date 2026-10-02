@@ -383,3 +383,9 @@ $transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 .contact-send-options a:focus-visible { outline: 2px solid #4c616b; outline-offset: 3px; }
 #contact .contact-artboard:has(.contact-send-options:not([hidden])) { min-height: 1120px; }
 @media (max-width: 600px) { #contact .contact-artboard:has(.contact-send-options:not([hidden])) { min-height: 1150px; } }
+
+/* Keep the heading aligned to artwork width, independent of form/section height.
+   The folder has transparent top/bottom margins; align its visible silhouette. */
+#contact .contact-heading-folder { top: 4.2cqw; }
+#contact .contact-title { top: 6.76cqw; height: 5.7cqw; min-height: 0; }
+#contact .contact-title-cursor { top: 9.91cqw; }
