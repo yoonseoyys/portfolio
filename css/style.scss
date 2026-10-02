@@ -389,3 +389,8 @@ $transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 #contact .contact-heading-folder { top: 4.2cqw; }
 #contact .contact-title { top: 6.76cqw; height: 5.7cqw; min-height: 0; }
 #contact .contact-title-cursor { top: 9.91cqw; }
+
+.contact-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.contact-consent { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; }
+.contact-form .contact-consent input { width: auto; margin-top: 3px; }
+.contact-form button:disabled { opacity: .55; cursor: not-allowed; }

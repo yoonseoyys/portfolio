@@ -1,0 +1,162 @@
+{
+  "media": {
+    "input": "images",
+    "output": "images",
+    "rename": "safe",
+    "categories": [
+      "image"
+    ]
+  },
+  "content": [
+    {
+      "name": "works",
+      "label": "Works · 작품 관리",
+      "type": "file",
+      "path": "data/works.json",
+      "format": "json",
+      "list": true,
+      "fields": [
+        {
+          "name": "id",
+          "label": "작품 ID",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "title",
+          "label": "작품명",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category",
+          "label": "카테고리",
+          "type": "string"
+        },
+        {
+          "name": "year",
+          "label": "연도",
+          "type": "string"
+        },
+        {
+          "name": "thumbnail",
+          "label": "대표 이미지",
+          "type": "image",
+          "required": true
+        },
+        {
+          "name": "description",
+          "label": "간단한 설명",
+          "type": "text"
+        },
+        {
+          "name": "detailPage",
+          "label": "상세 페이지",
+          "type": "reference",
+          "options": {
+            "collection": "detail-pages",
+            "search": "title,htmlPath",
+            "value": "{fields.htmlPath}",
+            "label": "{fields.title}"
+          }
+        },
+        {
+          "name": "published",
+          "label": "공개 여부",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "featured",
+          "label": "메인 노출",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "order",
+          "label": "노출 순서",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "detail-pages",
+      "label": "Detail Pages · 상세페이지 연결",
+      "type": "collection",
+      "path": "content/detail-pages",
+      "format": "json",
+      "filename": "{primary}.json",
+      "exclude": [
+        "README.md",
+        ".gitkeep"
+      ],
+      "view": {
+        "primary": "title"
+      },
+      "fields": [
+        {
+          "name": "title",
+          "label": "페이지명",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "htmlPath",
+          "label": "실제 HTML 경로 (예: details/branding.html)",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "guestbook",
+      "label": "Guestbook · 쪽지 확인",
+      "type": "collection",
+      "path": "content/guestbook",
+      "format": "json",
+      "exclude": [
+        "README.md",
+        ".gitkeep"
+      ],
+      "operations": {
+        "create": false
+      },
+      "view": {
+        "primary": "name",
+        "sort": "createdAt",
+        "order": "desc",
+        "fields": [
+          "name",
+          "createdAt",
+          "approved"
+        ]
+      },
+      "fields": [
+        {
+          "name": "name",
+          "label": "이름",
+          "type": "string",
+          "readonly": true
+        },
+        {
+          "name": "message",
+          "label": "쪽지 내용",
+          "type": "text",
+          "readonly": true
+        },
+        {
+          "name": "createdAt",
+          "label": "작성일",
+          "type": "date",
+          "readonly": true
+        },
+        {
+          "name": "approved",
+          "label": "승인 여부",
+          "type": "boolean",
+          "default": false
+        }
+      ]
+    }
+  ]
+}

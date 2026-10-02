@@ -15,7 +15,7 @@
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Kalnia:wght@400&display=swap">
-  <link rel="stylesheet" href="./css/style.css?v=contact-align-20261002">
+  <link rel="stylesheet" href="./css/style.css?v=cms-20261002">
 </head>
 
 <body>
@@ -266,24 +266,17 @@
           <svg class="contact-title-cursor" viewBox="0 0 26 31" aria-hidden="true"><path d="M1 1 23 16 14 18 19 27 14 30 9 21 2 26Z" fill="white" stroke="#222" stroke-width="1.2"/></svg>
           <div class="contact-folder"><img src="./images/contact/folder-closed.png" alt="" width="1410" height="1115"><svg class="contact-folder-cursor" viewBox="0 0 26 31" aria-hidden="true"><path d="M1 1 23 16 14 18 19 27 14 30 9 21 2 26Z" fill="white" stroke="#222" stroke-width="1.2"/></svg></div>
           <form class="contact-form" id="contact-form">
-            <p class="contact-recipient">Email. <a href="mailto:yoonseo0915@naver.com">yoonseo0915@naver.com</a></p>
+            <p class="contact-recipient">Leave a Message</p>
             <label for="contact-name">이름</label>
-            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="이름을 입력해주세요">
-            <label for="contact-email">이메일</label>
-            <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="160" required placeholder="회신받을 이메일 주소">
-            <label for="contact-message">메시지</label>
-            <textarea id="contact-message" name="message" rows="4" maxlength="1500" required placeholder="문의 내용을 입력해주세요"></textarea>
-            <button type="submit">메일 보내기 <span aria-hidden="true">↗</span></button>
-            <p class="contact-form-note" id="contact-form-note" role="status">입력 후 메일 앱 또는 웹메일에서 전송을 완료해주세요.</p>
-            <div id="contact-send-options" class="contact-send-options" hidden>
-              <p>아래 방법을 선택해 전송해주세요.</p>
-              <a id="contact-mail-app" href="mailto:yoonseo0915@naver.com">메일 앱으로 열기 ↗</a>
-              <button type="button" id="contact-copy-draft">받는 사람·제목·내용 복사</button>
-              <a href="https://mail.naver.com/" target="_blank" rel="noopener noreferrer">네이버 메일 열기 ↗</a>
-              <p class="contact-form-note">메일 앱이 열리지 않으면 내용을 복사한 뒤 네이버 메일의 ‘메일쓰기’에 붙여넣어 주세요.</p>
-              <label for="contact-draft">복사할 메일 내용</label>
-              <textarea id="contact-draft" readonly rows="5"></textarea>
-            </div>
+            <input id="contact-name" name="name" type="text" autocomplete="nickname" maxlength="40" required placeholder="이름 또는 닉네임">
+            <label for="contact-message">쪽지 내용</label>
+            <textarea id="contact-message" name="message" rows="4" maxlength="500" required placeholder="남기고 싶은 내용을 입력해주세요"></textarea>
+            <div class="contact-honeypot" aria-hidden="true"><label for="contact-website">Website</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div id="contact-turnstile"></div>
+            <p class="contact-form-note">이름과 내용은 공개 방명록 데이터로 저장됩니다. 개인정보나 비밀 내용은 적지 마세요.</p>
+            <label class="contact-consent"><input type="checkbox" name="consent" required> 공개 저장에 동의합니다.</label>
+            <button type="submit" disabled>쪽지 보내기 <span aria-hidden="true">↗</span></button>
+            <p class="contact-form-note" id="contact-form-note" role="status" aria-live="polite">쪽지 전송 연결을 확인하고 있습니다.</p>
           </form>
         </div>
       </section>
@@ -299,7 +292,8 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
   <!--내부스크립트-->
-  <script src="./js/script.js?v=contact-align-20261002"></script>
+  <script src="./js/script.js?v=cms-20261002"></script>
+  <script src="./js/cms.js?v=cms-20261002"></script>
 </body>
 
 </html>
