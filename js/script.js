@@ -98,8 +98,13 @@ contactForm.addEventListener('submit', (event) => {
   }
   const subject = `[포트폴리오 문의] ${name.replace(/[\r\n]/g, ' ')}`;
   const body = `이름: ${name}\n회신 이메일: ${email}\n\n${message}`;
-  window.location.href = `mailto:yoonseo0915@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  document.querySelector('#contact-form-note').textContent = '메일 작성창에서 전송을 완료해주세요. 열리지 않으면 위 이메일 주소로 직접 보내주세요.';
+  document.querySelector('#contact-mail-app').href = `mailto:yoonseo0915@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.querySelector('#contact-draft').value = `받는 사람: yoonseo0915@naver.com\n제목: ${subject}\n\n${body}`;
+  const options = document.querySelector('#contact-send-options');
+  options.hidden = false;
+  options.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  document.querySelector('#contact-mail-app').focus({ preventScroll: true });
+  document.querySelector('#contact-form-note').textContent = '메일을 아직 전송하지 않았습니다. 아래에서 전송 방법을 선택해주세요.';
 });
 // Allow editing and scrolling within Contact without triggering the page slider.
 contactForm.addEventListener('pointerdown', (event) => event.stopPropagation());
@@ -109,3 +114,17 @@ document.querySelector('#contact').addEventListener('wheel', (event) => {
   const atBottom = section.scrollTop + section.clientHeight >= section.scrollHeight - 1;
   if (event.target.closest('.contact-form') || (event.deltaY < 0 && !atTop) || (event.deltaY > 0 && !atBottom)) event.stopPropagation();
 }, { passive: true });
+
+// Clipboard errors leave a selectable draft available for manual copying.
+document.querySelector('#contact-copy-draft').addEventListener('click', async () => {
+  const draft = document.querySelector('#contact-draft');
+  const note = document.querySelector('#contact-form-note');
+  try {
+    await navigator.clipboard.writeText(draft.value);
+    note.textContent = '메일 내용을 복사했습니다. 웹메일에서 받는 사람·제목·본문을 입력한 후 전송해주세요.';
+  } catch {
+    draft.focus();
+    draft.select();
+    note.textContent = '복사할 내용을 선택했습니다. Ctrl+C 또는 길게 눌러 복사해주세요.';
+  }
+});

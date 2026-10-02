@@ -15,7 +15,7 @@
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&family=Kalnia:wght@400&display=swap">
-  <link rel="stylesheet" href="./css/style.css?v=contact-form-20261002">
+  <link rel="stylesheet" href="./css/style.css?v=contact-fallback-20261002">
 </head>
 
 <body>
@@ -274,7 +274,16 @@
             <label for="contact-message">메시지</label>
             <textarea id="contact-message" name="message" rows="4" maxlength="1500" required placeholder="문의 내용을 입력해주세요"></textarea>
             <button type="submit">메일 보내기 <span aria-hidden="true">↗</span></button>
-            <p class="contact-form-note" id="contact-form-note" role="status">버튼을 누르면 메일 앱이 열립니다. 작성창에서 전송을 완료해주세요.</p>
+            <p class="contact-form-note" id="contact-form-note" role="status">입력 후 메일 앱 또는 웹메일에서 전송을 완료해주세요.</p>
+            <div id="contact-send-options" class="contact-send-options" hidden>
+              <p>아래 방법을 선택해 전송해주세요.</p>
+              <a id="contact-mail-app" href="mailto:yoonseo0915@naver.com">메일 앱으로 열기 ↗</a>
+              <button type="button" id="contact-copy-draft">받는 사람·제목·내용 복사</button>
+              <a href="https://mail.naver.com/" target="_blank" rel="noopener noreferrer">네이버 메일 열기 ↗</a>
+              <p class="contact-form-note">메일 앱이 열리지 않으면 내용을 복사한 뒤 네이버 메일의 ‘메일쓰기’에 붙여넣어 주세요.</p>
+              <label for="contact-draft">복사할 메일 내용</label>
+              <textarea id="contact-draft" readonly rows="5"></textarea>
+            </div>
           </form>
         </div>
       </section>
@@ -290,7 +299,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
   <!--내부스크립트-->
-  <script src="./js/script.js?v=contact-form-20261002"></script>
+  <script src="./js/script.js?v=contact-fallback-20261002"></script>
 </body>
 
 </html>

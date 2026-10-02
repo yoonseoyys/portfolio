@@ -376,3 +376,10 @@ $transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   #contact .contact-folder { top: 90px; left: 38%; width: 24%; }
   #contact .contact-form { top: 210px; left: 8%; width: 84%; }
 }
+
+.contact-send-options[hidden] { display: none; }
+.contact-send-options { display: grid; gap: 10px; padding: 16px; border: 1px solid #cbd2d5; border-radius: 6px; background: #f5f7f8; }
+.contact-send-options a { padding: 10px; border: 1px solid #4c616b; border-radius: 4px; text-align: center; font-weight: 600; }
+.contact-send-options a:focus-visible { outline: 2px solid #4c616b; outline-offset: 3px; }
+#contact .contact-artboard:has(.contact-send-options:not([hidden])) { min-height: 1120px; }
+@media (max-width: 600px) { #contact .contact-artboard:has(.contact-send-options:not([hidden])) { min-height: 1150px; } }
