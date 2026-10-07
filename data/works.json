@@ -1,11 +1,11 @@
 [
   {
     "id": "work-01",
-    "title": "Commercial Film",
-    "category": "Video Editing",
+    "title": "Brand Identity",
+    "category": "Branding Design",
     "year": "",
     "thumbnail": "브랜딩디자인-드립커피.png",
-    "description": "호흡감 있는 컷 편집과 필름 그레인 색보정(DI)으로 직조한 브랜드 필름.",
+    "description": "호‘SLOW COFFEE BETTER DAYS’를 담은 드립커피 브랜드. 차분한 베이지 톤과 간결한 로고를 중심으로, 커피 한 잔이 전하는 여유를 패키지와 굿즈에 표현.",
     "detailPage": "/works/index.html",
     "published": true,
     "featured": false,
