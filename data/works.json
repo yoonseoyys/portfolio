@@ -73,12 +73,12 @@
   },
   {
     "id": "work-07",
-    "title": "Folding Guide",
-    "category": "Leaflet",
+    "title": "Product Detail",
+    "category": "Detail Page Design",
     "year": "",
-    "thumbnail": "https://picsum.photos/900/620?random=17",
-    "description": "3단 접지(Z-fold) 전개 순서에 맞춘 입체적 동선 안내와 인포메이션 리플릿.",
-    "detailPage": "detail-leaflet.html",
+    "thumbnail": "상세페이지-개똥쑥1.jpg",
+    "description": "이미지와 핵심 문구의 균형, 자연스러운 정보 흐름으로 제품의 특징을 전달하는 상세페이지.",
+    "detailPage": "/works/개똥쑥 상세페이지.html",
     "published": true,
     "featured": false,
     "order": 7
